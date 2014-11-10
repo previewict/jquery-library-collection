@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="jQuery Library Collection to use in various kinds of web interface">
+    <meta name="author" content="Preview ICT">
+
+    <title>jQuery Library Collection by Preview ICT</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../assets/css/style.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../../../assets/js/html5shiv.min.js"></script>
+    <script src="../../../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../assets/js/jquery.min.js"></script>
+    <script src="../../../../assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Implementation Scripts & stylesheets goes here -->
+    <style>
+        #flexiselDemo1, #flexiselDemo2, #flexiselDemo3 {
+            display:none;
+        }
+
+        .nbs-flexisel-container {
+            position:relative;
+            max-width:100%;
+        }
+        .nbs-flexisel-ul {
+            position:relative;
+            width:9999px;
+            margin:0px;
+            padding:0px;
+            list-style-type:none;
+            text-align:center;
+        }
+
+        .nbs-flexisel-inner {
+            overflow:hidden;
+            float:left;
+            width:100%;
+            background:#fcfcfc;
+            background: #fcfcfc -moz-linear-gradient(top, #fcfcfc 0%, #eee 100%); /* FF3.6+ */
+            background: #fcfcfc -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(100%,#eee)); /* Chrome,Safari4+ */
+            background: #fcfcfc -webkit-linear-gradient(top, #fcfcfc 0%, #eee 100%); /* Chrome10+,Safari5.1+ */
+            background: #fcfcfc -o-linear-gradient(top, #fcfcfc 0%, #eee 100%); /* Opera11.10+ */
+            background: #fcfcfc -ms-linear-gradient(top, #fcfcfc 0%, #eee 100%); /* IE10+ */
+            background: #fcfcfc linear-gradient(top, #fcfcfc 0%, #eee 100%); /* W3C */
+            border:1px solid #ccc;
+            border-radius:5px;
+            -moz-border-radius:5px;
+            -webkit-border-radius:5px;
+        }
+
+        .nbs-flexisel-item {
+            float:left;
+            margin:0px;
+            padding:0px;
+            cursor:pointer;
+            position:relative;
+            line-height:0px;
+        }
+        .nbs-flexisel-item img {
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            max-width:100px;
+            max-height:45px;
+        }
+
+        /*** Navigation ***/
+
+        .nbs-flexisel-nav-left,
+        .nbs-flexisel-nav-right {
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            cursor: pointer;
+            z-index: 100;
+            opacity: 0.5;
+        }
+
+        .nbs-flexisel-nav-left {
+            left: 10px;
+            background: url(img/button-previous.png) no-repeat;
+        }
+
+        .nbs-flexisel-nav-right {
+            right: 5px;
+            background: url(img/button-next.png) no-repeat;
+        }
+    </style>
+    <script src="js/jquery.flexisel.js" type="text/javascript"></script>
+    <!-- End of Implementation Scripts and Stylesheets -->
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 implementation-area">
+            <ul id="flexiselDemo1">
+                <li><img src="img/logo-nyt.png" /></li>
+                <li><img src="img/logo-microsoft.png" /></li>
+                <li><img src="img/logo-ebay.png" /></li>
+                <li><img src="img/logo-hp.png" /></li>
+                <li><img src="img/logo-youtube.png" /></li>
+            </ul>
+
+            <div class="clearout"></div>
+
+            <p>You can also change the number of items shown depending on the screen width!</p>
+
+            <ul id="flexiselDemo2">
+                <li><img src="img/logo-adidas.png" /></li>
+                <li><img src="img/logo-nike.png" /></li>
+                <li><img src="img/logo-amazon.png" /></li>
+                <li><img src="img/logo-spotify.png" /></li>
+                <li><img src="img/logo-android.png" /></li>
+            </ul>
+
+            <div class="clearout"></div>
+
+            <p>Other options include autoplay, animation speed when scrolling right and left, initial number of visible items, and more!</p>
+
+            <ul id="flexiselDemo3">
+                <li><img src="img/1.jpg" /></li>
+                <li><img src="img/2.jpg" /></li>
+                <li><img src="img/3.jpg" /></li>
+                <li><img src="img/4.jpg" /></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div style="text-align: center">
+            <a href="http://9bitstudios.github.io/flexisel/" class="btn btn-primary">Original Project URL</a>
+        </div>
+    </div>
+</div> <!-- /container -->
+
+<!-- Implementation JS Code goes here -->
+<script>
+    $(window).load(function() {
+        $("#flexiselDemo1").flexisel();
+        $("#flexiselDemo2").flexisel({
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint:480,
+                    visibleItems: 1
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems: 2
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems: 3
+                }
+            }
+        });
+
+        $("#flexiselDemo3").flexisel({
+            visibleItems: 5,
+            animationSpeed: 1000,
+            autoPlay: true,
+            autoPlaySpeed: 3000,
+            pauseOnHover: true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint:480,
+                    visibleItems: 1
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems: 2
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems: 3
+                }
+            }
+        });
+
+    });
+</script>
+<!-- End of Implementation JS Code -->
+<script>
+
+</script>
+</body>
+</html>

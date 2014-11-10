@@ -22,3 +22,7 @@ body {
     background-color: darkgreen;
     border-color: darkgreen;
 }
+
+.implementation-area{
+    min-height: 500px;
+}
